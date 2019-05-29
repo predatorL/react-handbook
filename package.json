@@ -1,0 +1,44 @@
+{
+  "name": "template-react",
+  "version": "0.0.1",
+  "description": "react",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node ./scripts/start.js",
+    "build": "NODE_ENV=production node ./scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runewords/template-react.git"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runewords/template-react/issues"
+  },
+  "homepage": "https://github.com/runewords/template-react#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
+  }
+}
