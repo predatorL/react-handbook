@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Icon, Checkbox, Button} from 'antd';
+import {Form, Input, Select, Checkbox, Button} from 'antd';
 class FormView extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -12,31 +12,43 @@ class FormView extends React.Component {
     };
 
     render() {
-        const { getFieldDecorator } = this.props.form;
+        const { getFieldDecorator, getFieldValue } = this.props.form;
+        console.log(getFieldValue('agree'))
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: 'Please input your username!' }]
-                    })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />)}
+                    {getFieldDecorator('name', {
+                        rules: [{ required: true, message: '请填写姓名' }]
+                    })(<Input  placeholder="姓名" />)}
+                </Form.Item>
+                <Form.Item>
+                    {getFieldDecorator('area', {
+                        rules: [{ required: true, message: '请选择地区' }]
+                    })(
+                        <Select placeholder="地区">
+                            <Select.Option value="china">中国</Select.Option>
+                            <Select.Option value="usa">美国</Select.Option>
+                        </Select>
+                    )}
                 </Form.Item>
                 <Form.Item>
                     {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }]
-                    })(<Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />)}
+                        rules: [{ required: true, message: '请填写密码' }]
+                    })(<Input type="password" placeholder="密码" />)}
                 </Form.Item>
                 <Form.Item>
-                    {getFieldDecorator('remember', {
+                    {getFieldDecorator('agree', {
                         valuePropName: 'checked',
-                        initialValue: true
-                    })(<Checkbox>Remember me</Checkbox>)}
+                        initialValue: false
+                    })(<Checkbox>同意</Checkbox>)}
                     <a className="login-form-forgot" href="">
-                        Forgot password
+                        用户协议
                     </a>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Log in
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" disabled={!getFieldValue('agree')} htmlType="submit" className="submit-button">
+                        确定
                     </Button>
-                    Or <a href="">register now!</a>
                 </Form.Item>
             </Form>
         );
