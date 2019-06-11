@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 // layout
 import home from './home';
 import form from './form';
-console.log(123123)
+
 export default class View extends React.Component {
     constructor(props) {
         super(props);

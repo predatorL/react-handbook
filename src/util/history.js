@@ -1,5 +1,5 @@
-import createHashHistory from 'history/createHashHistory';
+import history from 'history';
 
-const customHistory = createHashHistory();
+const customHistory = history.createHashHistory();
 
 export default customHistory;
