@@ -54,6 +54,11 @@ class View extends React.Component {
                             <Link to="/canvas/mod1">基础</Link>
                         </Menu.Item>
                     </SubMenu>
+                    <SubMenu key="css3" title="css3" >
+                        <Menu.Item key="css3-1">
+                            <Link to="/css3/mod1">flex/grid</Link>
+                        </Menu.Item>
+                    </SubMenu>
                 </Menu>
             </aside>
         );
