@@ -32,6 +32,22 @@ class FormView extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item>
+                    {getFieldDecorator('idcardType', {
+                        rules: [{ required: true, message: '请选择身份证类型' }]
+                    })(
+                        <Select placeholder="身份证号">
+                            <Select.Option value="1">身份证</Select.Option>
+                            <Select.Option value="2">护照</Select.Option>
+                            <Select.Option value="3">驾照</Select.Option>
+                        </Select>
+                    )}
+                </Form.Item>
+                <Form.Item>
+                    {getFieldDecorator('idcard', {
+                        rules: [{ required: true, message: '请填身份证' }]
+                    })(<Input  placeholder="身份证" />)}
+                </Form.Item>
+                <Form.Item>
                     {getFieldDecorator('password', {
                         rules: [{ required: true, message: '请填写密码' }]
                     })(<Input type="password" placeholder="密码" />)}
