@@ -1,18 +1,20 @@
 import React from 'react';
-import history from './util/history';
 import { Router } from 'react-router-dom';
-import Routes from './page/routes';
 import { Provider } from 'mobx-react';
+import Store from './store';
+import history from './util/history';
+import Routes from './page/routes';
+import Aside from './mod/aside';
+
+const store = new Store();
 
 class App extends React.Component {
     render() {
         return (
             <Provider {...store}>
                 <Router history={history}>
-                <div className="page-root">
-                        <aside className="page-aside">
-                        aside
-                        </aside>
+                    <div className="page-root">
+                        <Aside />
                         <main className="page-main">
                             <Routes />
                         </main>
@@ -23,4 +25,3 @@ class App extends React.Component {
     }
 }
 export default App;
-

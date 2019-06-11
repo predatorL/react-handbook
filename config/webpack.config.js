@@ -3,6 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');  // 导出额外的文件插件
+// const StringReplacePlugin = require('string-replace-webpack-plugin'); // 字符串替换插件
+
+// bundle分析
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const env = process.env.NODE_ENV;
 
 // plugins
@@ -45,8 +51,23 @@ module.exports = {
                 use: 'babel-loader',
                 // 排除 `node_modules`目录
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(css|less)$/,
+                use: [
+                  'style-loader',
+                  { loader: 'css-loader', options: { importLoaders: 1 } },
+                  'less-loader'
+                ]
             }
-        ]
+        ],
+    },
+    resolve: {
+        extensions: ['.js', '.vue'], // 确保引用时省略模块扩展名
+        alias:{
+            '@': path.resolve(__dirname, '../src'),
+            '@ui': path.resolve(__dirname, '../src/components/ui'),
+        }
     },
     plugins
 }
