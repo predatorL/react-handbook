@@ -13,7 +13,6 @@ class FormView extends React.Component {
 
     render() {
         const { getFieldDecorator, getFieldValue } = this.props.form;
-        console.log(getFieldValue('agree'))
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Form.Item>
