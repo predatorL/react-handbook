@@ -17,6 +17,16 @@ class View extends React.Component {
             ]
         },
         {
+            key: 'context',
+            title: 'context',
+            items: [
+                {
+                    to: 'mod1',
+                    title: '场景1'
+                }
+            ]
+        },
+        {
             key: 'hoc',
             title: 'HOC',
             items: [

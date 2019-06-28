@@ -9,7 +9,7 @@ export default class View extends React.Component {
 
     render() {
         return (
-            <div className="form-warpper">
+            <div className="context-warpper">
                 <Route path="/context/mod1" component={mod1} />
             </div>
         );
