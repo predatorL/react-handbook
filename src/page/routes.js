@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import home from './home';
 import form from './form';
 import context from './context';
+import hooks from './hooks';
 
 export default class View extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ export default class View extends React.Component {
                 <Route path="/" exact component={home} />
                 <Route path="/form" component={form} />
                 <Route path="/context" component={context} />
+                <Route path="/hooks" component={hooks} />
             </React.Fragment>
         );
     }
