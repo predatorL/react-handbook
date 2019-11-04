@@ -5,10 +5,17 @@ export default class View extends React.Component {
         super(props);
     }
 
+    componentWillMount() {
+        console.log('componentWillMount')
+    }
+
+    
+
+
     render() {
         return (
             <section className="mod1">
-                <pre></pre>
+                <section></section>
             </section>
         );
     }
