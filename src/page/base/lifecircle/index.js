@@ -1,16 +1,49 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import mod1 from './mod1';
 
 export default class View extends React.Component {
     constructor(props) {
         super(props);
     }
 
+    static getDerivedStateFromProps() {
+
+    }
+
+    componentWillMount() {
+
+    }
+
+    shouldComponentUpdate() {
+        
+    }
+
+    componentWillUpdate() {
+
+    }
+
+
+    componentWillReceiveProps() {
+
+    }
+
+    componentDidUpdate() {
+
+    }
+
+    componentDidCatch() {
+
+    }
+
+    componentWillUnmount() {
+
+    }
+
     render() {
         return (
             <div className="form-warpper 111">
-                <Route path="/lifecircle/mod1" component={mod1} />
+                <section className="mod1">
+                    <section></section>
+                </section>
             </div>
         );
     }
