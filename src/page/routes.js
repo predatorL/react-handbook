@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 // layout
-import home from './home';
 import base from './base';
 import scene from './scene';
 import hooks from './hooks';
@@ -16,7 +15,6 @@ export default class View extends React.Component {
 
         return (
             <React.Fragment>
-                <Route path="/" exact component={home} />
                 <Route path="/base" component={base} />
                 <Route path="/scene" component={scene} />
                 <Route path="/hoc" component={hoc} />
