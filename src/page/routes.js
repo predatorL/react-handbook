@@ -5,11 +5,9 @@ import base from './base';
 import scene from './scene';
 import hooks from './hooks';
 import hoc from './hoc';
+import store from './store';
 
 export default class View extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 
@@ -19,6 +17,7 @@ export default class View extends React.Component {
                 <Route path="/scene" component={scene} />
                 <Route path="/hoc" component={hoc} />
                 <Route path="/hooks" component={hooks} />
+                <Route path="/store" component={store} />
             </React.Fragment>
         );
     }
