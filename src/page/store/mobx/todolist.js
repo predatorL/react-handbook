@@ -1,6 +1,7 @@
 import React from 'react';
 import {observable, action, computed} from 'mobx';
 import { observer } from 'mobx-react';
+import {Form} from 'antd';
 
 class Todo {
     constructor(name) {
@@ -12,8 +13,8 @@ class Todo {
 }
 
 class TodoList {
-    @observable todos = [
-    ];
+    @observable todos = [];
+    
     @computed get unfinishedTodoCount() {
         return this.todos.filter(todo => !todo.finished).length;
     }
