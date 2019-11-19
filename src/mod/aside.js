@@ -43,7 +43,7 @@ class View extends React.Component {
                 {
                     to: 'form',
                     title: '表单',
-                    
+
                 },
                 {
                     to: 'table',
@@ -52,7 +52,7 @@ class View extends React.Component {
                 {
                     to: 'chart',
                     title: '图表',
-                    
+
                 },
                 {
                     to: 'bmap',
@@ -81,13 +81,17 @@ class View extends React.Component {
             title: 'store',
             items: [
                 {
+                    to: 'common',
+                    title: 'common',
+                },
+                {
                     to: 'flux',
                     title: 'flux',
                 },
                 {
                     to: 'mobx',
                     title: 'mobx',
-                    
+
                 },
                 {
                     to: 'redux',
@@ -103,7 +107,7 @@ class View extends React.Component {
                 <Menu mode="inline" theme="dark">
                     {
                         this.menus.map((menu, i) => {
-                            
+
                             return menu.items ? (
                                 <SubMenu key={menu.key} title={menu.title} >
                                     {

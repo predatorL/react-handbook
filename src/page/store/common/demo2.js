@@ -1,9 +1,11 @@
 import React from 'react';
+
 export default class extends React.Component {
     render() {
         return (
-            <div className="main-container flux">
-            </div>
+            <section>
+                <header>context模式</header>
+            </section>
         )
     }
 }
