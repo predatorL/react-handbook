@@ -1,4 +1,4 @@
-const { override, addDecoratorsLegacy, fixBabelImports, addLessLoader } = require('customize-cra');
+const { override, addWebpackExternals, addDecoratorsLegacy, fixBabelImports, addLessLoader } = require('customize-cra');
 
 
 module.exports = override(
@@ -7,6 +7,9 @@ module.exports = override(
         libraryName: 'antd',
         libraryDirectory: 'es',
         style: 'css',
+    }),
+    addWebpackExternals({
+        'videojs': 'videojs'
     }),
     addLessLoader({
         javascriptEnabled: true,
