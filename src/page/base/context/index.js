@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import mod1 from './mod1';
+import Mod1 from './mod1';
+import Mod2 from './mod2';
 
 export default class View extends React.Component {
     constructor(props) {
@@ -10,7 +10,8 @@ export default class View extends React.Component {
     render() {
         return (
             <div className="context-warpper">
-                <Route path="/context/mod1" component={mod1} />
+                <Mod1 />
+                <Mod2 />
             </div>
         );
     }
