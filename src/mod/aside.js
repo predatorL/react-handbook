@@ -2,7 +2,12 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
-const { SubMenu, Item, ItemGroup, Icon } = Menu;
+
+const { SubMenu } = Menu;
+
+export const AsideContenxt = React.createContext({
+    menus: [],
+})
 
 class View extends React.Component {
     menus = [
@@ -107,7 +112,6 @@ class View extends React.Component {
                 <Menu mode="inline" theme="dark">
                     {
                         this.menus.map((menu, i) => {
-
                             return menu.items ? (
                                 <SubMenu key={menu.key} title={menu.title} >
                                     {
