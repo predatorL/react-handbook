@@ -90,10 +90,6 @@ class View extends React.Component {
                     title: 'common',
                 },
                 {
-                    to: 'flux',
-                    title: 'flux',
-                },
-                {
                     to: 'mobx',
                     title: 'mobx',
 
