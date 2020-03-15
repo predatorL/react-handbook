@@ -1,20 +1,39 @@
 import React from 'react';
-import { todoStore, TodoListView } from './todolist';
+import TodoListView from './todolist';
 import './style.less';
-import {Row, Col} from 'antd';
+import {Row, Col, Tabs} from 'antd';
+import store from './store';
+import { Provider } from 'mobx-react';
+
+const { TabPane } = Tabs;
 
 export default class extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            page: 'todolist'
+        }
+    }
+
     render() {
         return (
-            <div className="main-container mobx">
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <TodoListView todolist={todoStore} />
-                    </Col>
-                    <Col span={12}></Col>
-                </Row>
-                
-            </div>
+            <Provider {...store}>
+                <div className="main-container mobx">
+                    <Tabs defaultActiveKey="1" >
+                        <TabPane tab="Tab 1" key="1">
+                            <TodoListView />
+                        </TabPane>
+                        <TabPane tab="Tab 2" key="2">
+                        Content of Tab Pane 2
+                        </TabPane>
+                        <TabPane tab="Tab 3" key="3">
+                        Content of Tab Pane 3
+                        </TabPane>
+                    </Tabs>
+                    
+                </div>
+            </Provider>
         )
     }
 }
